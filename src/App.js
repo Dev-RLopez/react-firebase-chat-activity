@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './App.css';
+import configData from "./firebase-config.json";
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -9,15 +10,7 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAhLfyL0EEWfi9TDF4Q6cfF1FEdX6nlsWU",
-  authDomain: "react-firebase-chat-activity.firebaseapp.com",
-  projectId: "react-firebase-chat-activity",
-  storageBucket: "react-firebase-chat-activity.appspot.com",
-  messagingSenderId: "169645741021",
-  appId: "1:169645741021:web:1b8a7459c71ef879381c34",
-  measurementId: "G-23F19CK3DY"
-})
+firebase.initializeApp(configData);
 
 const auth = firebase.auth();
 const firestore = firebase.firestore();
@@ -53,6 +46,7 @@ function SignIn() {
   return (
     <>
       <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+      <p>Do not violate the community guidelines or you will be banned for life!</p>
     </>
   )
 
