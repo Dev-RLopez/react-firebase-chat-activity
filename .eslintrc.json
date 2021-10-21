@@ -19,7 +19,7 @@
         "react"
     ],
     "rules": {
-        "import/no-unresolved": "off",
+        "import/no-unresolved": [1],
         "no-unused-vars": "off",
         "react/jsx-filename-extension": "off",
         "react/button-has-type": "off",
